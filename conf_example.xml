@@ -1,0 +1,57 @@
+<configuration version='1'>
+<global>
+    <bk_dir>/tmp/backup</bk_dir>
+</global>
+<services name="AMBARI">
+    <host>ambari01.localhdp</host>
+    <port>8080</port>
+    <db>
+        <type>psql</type>
+        <host>localhost</host>
+        <user>ambari</user>
+        <db_name>ambari</db_name>
+    </db>
+    <db>
+        <type>psql</type>
+        <host>localhost</host>
+        <user>mapred</user>
+        <db_name>ambarirca</db_name>
+    </db>
+</services>
+<services name="HDF">
+    <host>hdp01.mydom.net</host>
+    <host>hdps01.mydom.net</host>
+    <host>hdps02.mydom.net</host>
+    <host>hdps03.mydom.net</host>
+    <install_dir>/path/to/install_dir</install_dir>
+</services>
+<services name="HIVE_DB">
+    <host>s01.localhdp</host>
+    <db>
+        <type>mysql</type>
+        <host>s01.localhdp</host>
+        <port></port>
+        <user>hive</user>
+        <passwd>hivepassword</passwd>
+        <db_name>hive</db_name>
+    </db>
+</services>
+<services name="HDP-search">
+    <host>hdpsearch01.mydom.net</host>
+    <host>hdpsearch02.mydom.net</host>
+    <host>hdpsearch03.mydom.net</host>
+    <host>hdpsearch04.mydom.net</host>
+    <host>hdpsearch05.mydom.net</host>
+    <port>8883</port>
+    <collection>collection01</collection>
+    <collection>collection02</collection>
+    <install_dir>/path/to/install_dir</install_dir>
+    <tmp_local_path>/path/to/backup_dir</tmp_local_path>
+</services>
+<service name="HDFS_METADATA">
+    <nn>
+        <host>m01.localhdp</host>
+        <path_namenode_dir>/hadoop/hdfs/namenode</path_namenode_dir>
+    </nn>
+</service>
+</configuration>
